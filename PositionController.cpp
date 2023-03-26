@@ -53,6 +53,10 @@ float PositionController::getSpeedRPM()
     return actualSpeed;
 }
 
+bool PositionController::isIdle(){
+  return fabs(getRotation()-desiredRotation) < 0.1;
+}
+
 /**
  * Reads the speed in RPS (rotations per second).
  * @return actual speed in RPS.
@@ -60,6 +64,14 @@ float PositionController::getSpeedRPM()
 float PositionController::getSpeedRPS()
 {
     return actualSpeed/60.0f;
+}
+
+double PositionController::getDesiredRotation(){
+    return desiredRotation;
+}
+
+void PositionController::setDesiredRotationRelative(float relative){
+    setDesiredRotation(desiredRotation + relative);
 }
 
 /**

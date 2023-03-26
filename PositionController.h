@@ -19,6 +19,7 @@ public:
     float    getSpeedRPM();
     float    getSpeedRPS();
     void     setDesiredRotation(float desiredRotation);
+    double   getDesiredRotation();
     float    getRotation();
     void     setFeedForwardGain(float kn);
     void     setSpeedCntrlGain(float kp);
@@ -27,6 +28,8 @@ public:
     void     setMaxVelocityRPM(float maxVelocityRPM);
     void     setMaxAccelerationRPS(float maxAccelerationRPS);
     void     setMaxAccelerationRPM(float maxAccelerationRPM);
+    void     setDesiredRotationRelative(float desiredRelativeRotation);
+    bool     isIdle();
 
 private:
 
